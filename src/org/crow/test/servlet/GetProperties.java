@@ -18,7 +18,7 @@ public class GetProperties {
 	
 	private String getProperties2(){
 		File file = new File("");
-		File propFile = new File(file.getAbsoluteFile().toString(), "src/path.properties");
+		File propFile = new File(file.getAbsoluteFile().toString(), "src/upload.properties");
 		String info = null;
 		Properties props = new Properties();
 		InputStream is;
@@ -37,7 +37,7 @@ public class GetProperties {
 	private String getProperties1(){
 		String info = null;
 		Properties props = new Properties();
-		InputStream is = this.getClass().getResourceAsStream("/path.properties");
+		InputStream is = this.getClass().getResourceAsStream("/upload.properties");
 		try {
 			props.load(is);
 			info = props.getProperty("UPLOAD_PATH");
