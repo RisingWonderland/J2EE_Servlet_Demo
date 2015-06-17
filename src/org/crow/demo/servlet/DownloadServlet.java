@@ -77,7 +77,11 @@ public class DownloadServlet extends HttpServlet {
 		// 获得用户要下载的文件名
 		String fileName = request.getParameter("fileName");
 		String trueFileName = fileName.substring(fileName.lastIndexOf("/") + 1, fileName.length());
+<<<<<<< HEAD
 		System.out.println("File name: " + trueFileName);
+=======
+		System.out.println("文件名：" + trueFileName);
+>>>>>>> origin/master
 		// 获得文件真是存储位置，判断文件是否存在
 //		String filePath = getServletContext().getRealPath("/resources/" + fileName);
 		
@@ -86,11 +90,17 @@ public class DownloadServlet extends HttpServlet {
 		String parentPath = getPropertiesParameter(isForReadProps, "DOWNLOAD_PATH");
 		
 		String filePath = parentPath + fileName; 
+<<<<<<< HEAD
 		System.out.println("File true path: " + filePath);
 		File downloadFile = new File(filePath);
 		if(downloadFile.exists()){
 			trueFileName = new String(trueFileName.getBytes("UTF-8"), "ISO-8859-1");// 解决中文乱码
 			System.out.println("File name after encoding: " + trueFileName);
+=======
+		System.out.println("文件真实路径：" + filePath);
+		File downloadFile = new File(filePath);
+		if(downloadFile.exists()){
+>>>>>>> origin/master
 			// 设置文件MIME类型
 			response.setContentType(getServletContext().getMimeType(trueFileName));
 			// 设置文件以附件形式下载
@@ -112,6 +122,30 @@ public class DownloadServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}
+<<<<<<< HEAD
+=======
+		
+		
+		
+		
+		
+		
+		
+		/*
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.print("    This is ");
+		out.print(this.getClass());
+		out.println(", using the POST method");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();*/
+>>>>>>> origin/master
 	}
 
 	/**
