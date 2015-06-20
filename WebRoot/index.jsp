@@ -21,8 +21,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<button>Demo Ajax</button>
 	<button onclick="window.location.href='download.jsp'">Demo Download</button>
 	<button onclick="window.location.href='upload.jsp'">Demo Upload</button>
+	<button onclick="window.location.href='uploadByHTML5.jsp'">Demo HTML5 Upload</button>
 	<button onclick="window.location.href='ajaxByJSNative.jsp'">Demo JavaScript native Ajax</button>
 	<button onclick="window.location.href='ajaxByjQuery.jsp'">Demo jQuery Ajax</button>
+	<button onclick="window.location.href='jQueryDemo1.jsp'">A jQuery demo</button>
 	<button>Demo...</button>
 </body>
 </html>

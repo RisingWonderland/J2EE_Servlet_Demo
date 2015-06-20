@@ -26,6 +26,27 @@
     <servlet-name>CheckUserExistServlet</servlet-name>
     <servlet-class>org.crow.demo.servlet.CheckUserExistServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetProvinceServlet</servlet-name>
+    <servlet-class>org.crow.demo.servlet.GetProvinceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetCityServlet</servlet-name>
+    <servlet-class>org.crow.demo.servlet.GetCityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Upload4H5Servlet</servlet-name>
+    <servlet-class>org.crow.demo.servlet.Upload4H5Servlet</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -46,6 +67,18 @@
   <servlet-mapping>
     <servlet-name>CheckUserExistServlet</servlet-name>
     <url-pattern>/CheckUserExistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetProvinceServlet</servlet-name>
+    <url-pattern>/GetProvinceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetCityServlet</servlet-name>
+    <url-pattern>/GetCityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Upload4H5Servlet</servlet-name>
+    <url-pattern>/Upload4H5Servlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

@@ -134,6 +134,8 @@ public class UploadServlet extends HttpServlet {
 						BufferedInputStream bis = new BufferedInputStream(fis.openStream());
 						BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(new File(uploadPath + "img", fileName)));
 						Streams.copy(bis, bos, true);
+						bos.close();
+						bis.close();
 						System.out.println("上传文件 " + fileName + " 成功");
 					}
 				}

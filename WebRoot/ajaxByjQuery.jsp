@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Demo</title>
+<title>jQuery Ajax Demo</title>
 <!--
 <link rel="stylesheet" type="text/css" href="styles.css">
 -->

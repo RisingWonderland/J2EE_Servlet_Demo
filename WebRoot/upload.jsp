@@ -50,6 +50,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<input type="file" name="form_upload4_file1" id="form_upload4_file1" ><br/>
 	</form>
 	
+	<h2>使用HTML5技术上传（支持多文件）</h2>
+	<input id="h5files" type="file" multiple="multiple" ><br/>
+	<button onclick="uploadByH5();">Upload files</button>
+	
 	<p></p>
 	<p></p>
 	<p></p>
@@ -78,5 +82,47 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function uploadByH5(){
+	if (!(window.File || window.FileReader || window.FileList || window.Blob)) {
+	    alert("Please use a browser that support HTML5 standard.");
+	    return;
+	}
+	
+	var files = $("#h5files").prop("files");
+	if(files.length == 0){
+		alert("Please select some files");
+		return;
+	}
+	
+	for(var i = 0, len = files.length; i < len ;i++){
+		var fd = new FormData();
+		fd.append("file", files[i]);
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open("post", "UploadServlet", true);
+		xhr.send(fd);
+		
+		xhr.onloadstart = function(){
+			console.log("Upload start.");
+		}
+		xhr.onload = function(){
+			console.log("Upload complete.");
+			if(xhr.readyState == 4 && xhr.status == 200){
+				var result = xhr.responseText;
+				console.log(result);
+			}
+		}
+		xhr.onloadend = function(){
+			console.log("Upload end.");
+		}
+		xhr.onabort = function(){
+			console.log("Upload abort.");
+		}
+		xhr.onerror = function(){
+			console.log("Upload error.");
+		}
+	}
+}
 </script>
 </html>
