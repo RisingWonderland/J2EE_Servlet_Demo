@@ -8,6 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <base href="<%=basePath%>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <title>My JSP 'index.jsp' starting page</title>
 	<!--
@@ -20,6 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<button>Demo Ajax</button>
 	<button onclick="window.location.href='download.jsp'">Demo Download</button>
 	<button onclick="window.location.href='upload.jsp'">Demo Upload</button>
+	<button onclick="window.location.href='ajaxByJSNative.jsp'">Demo JavaScript native Ajax</button>
+	<button onclick="window.location.href='ajaxByjQuery.jsp'">Demo jQuery Ajax</button>
 	<button>Demo...</button>
 </body>
 </html>
