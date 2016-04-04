@@ -1,4 +1,5 @@
 *.class
+WebRoot/WEB-INF/classes/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -51,3 +52,6 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+# MyEclipse 2015
+.tern-project

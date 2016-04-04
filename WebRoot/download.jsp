@@ -26,5 +26,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<p>使用Servlet实现文件下载</p>
 	<a href="./DownloadServlet?fileName=img/img图片1.jpg">download a picture</a><br/>
 	<a href="./DownloadServlet?fileName=zip/zip文档1.zip">download a zip file</a><br/>
+	<p>客户端提供文件名（可中文），Servlet将一段字符流/字节流作为文件流返回给客户端，解决中文乱码。</p>
+	<input type="text" name="fileName" id="fileNameForSolveChineseUnknowableCode" /><br>
+	<a href="javascript:downloadFromStream();" >download from a stream</a>
 </body>
+<script type="text/javascript" >
+function downloadFromStream() {
+	var fileName = document.getElementById('fileNameForSolveChineseUnknowableCode').value;
+	if (fileName === '' || fileName === null || fileName === undefined) {
+		fileName = '未命名';
+	}
+	window.open(encodeURI(encodeURI('SolveChineseUnknowableCodeServlet?fileName=' + fileName)));
+}
+</script>
 </html>
